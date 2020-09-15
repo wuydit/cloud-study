@@ -23,7 +23,7 @@
     <lombok.version>1.18.12</lombok.version>
     <commons-lang3.version>3.9</commons-lang3.version>
     <commons-collections4.version>4.4</commons-collections4.version>
-    <mybatis-plus-boot-starter>3.3.2</mybatis-plus-boot-starter>
+    <mybatis-plus-boot-starter>3.4.0</mybatis-plus-boot-starter>
     <druid-spring-boot-starter>1.1.23</druid-spring-boot-starter>
   </properties>
 
@@ -57,7 +57,6 @@
         <version>${druid-spring-boot-starter}</version>
       </dependency>
 
-
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
@@ -68,12 +67,6 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>druid</artifactId>
-        <version>${druid.version}</version>
       </dependency>
 
       <dependency>
@@ -95,18 +88,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <repositories>
-    <repository>
-      <id>aliMaven</id>
-      <name>aliYun maven</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 </project>

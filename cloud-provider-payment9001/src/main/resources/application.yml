@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    druid:
+      username: dev
+      password: dev
+      url: jdbc:mysql://172.28.14.115:3306/topicdb?characterEncoding=utf8&useSSL=true&useUnicode=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+    type: com.alibaba.druid.pool.DruidDataSource
+
