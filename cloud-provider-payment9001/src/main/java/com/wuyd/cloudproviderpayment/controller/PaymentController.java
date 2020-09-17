@@ -9,8 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.stereotype.Controller;
-
 /**
  * <p>
  *  前端控制器
@@ -39,7 +37,7 @@ public class PaymentController {
     public ResponseEntity<CommonResult<PaymentEntity>> create(@PathVariable Long id){
         PaymentEntity paymentEntity = paymentService.getById(id);
         if (paymentEntity != null) {
-            return ResponseEntity.ok(new CommonResult<>(0, "success",paymentEntity));
+            return ResponseEntity.ok(new CommonResult<>(0, "success", paymentEntity));
         }
         return ResponseEntity.ok(new CommonResult<>(1, "No"));
     }
