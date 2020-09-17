@@ -1,6 +1,7 @@
 package com.wuyd.cloudproviderpayment.controller;
 
 
+import com.wuyd.cloudproviderpayment.aop.Log;
 import com.wuyd.cloudproviderpayment.dto.CommonResult;
 import com.wuyd.cloudproviderpayment.entity.PaymentEntity;
 import com.wuyd.cloudproviderpayment.service.PaymentService;
@@ -25,6 +26,7 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
+    @Log("create")
     @PostMapping("payment")
     public ResponseEntity<CommonResult<Boolean>> create(@RequestBody PaymentEntity paymentEntity){
         if (paymentService.save(paymentEntity)) {
@@ -33,13 +35,11 @@ public class PaymentController {
         return ResponseEntity.ok(new CommonResult<>(1, "No",Boolean.FALSE));
     }
 
+    @Log("getById")
     @GetMapping("payment/{id}")
-    public ResponseEntity<CommonResult<PaymentEntity>> create(@PathVariable Long id){
+    public ResponseEntity<PaymentEntity> getById(@PathVariable Long id){
         PaymentEntity paymentEntity = paymentService.getById(id);
-        if (paymentEntity != null) {
-            return ResponseEntity.ok(new CommonResult<>(0, "success", paymentEntity));
-        }
-        return ResponseEntity.ok(new CommonResult<>(1, "No"));
+        return ResponseEntity.ok(paymentEntity);
     }
 
 }
