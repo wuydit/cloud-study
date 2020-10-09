@@ -10,7 +10,9 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>cloud-provider-payment</module>
+    <module>cloud-provider-payment9001</module>
+    <module>cloud-eureka-server-9003</module>
+    <module>cloud-consumer-order9002</module>
   </modules>
 
   <properties>
